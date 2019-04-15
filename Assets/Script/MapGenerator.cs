@@ -20,9 +20,6 @@ public class MapGenerator : MonoBehaviour
     //Total GameObjects to spawn
     int totalPlanes = 0;
 
-    //Convert Scale to Meter multiply by toMeter
-    int toMeter = 10;
-
     void Start()
     {
         totalPlanes = xSize * zSize;

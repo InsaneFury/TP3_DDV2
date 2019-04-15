@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-
     public float health = 50f;
-    public float timeToRevive = 5f;
+    public int points = 100;
 
     public void TakeDamage(float amount) {
         health -= amount;
@@ -16,13 +15,7 @@ public class Target : MonoBehaviour
     }
 
     void Die() {
-        StartCoroutine(Revive(timeToRevive));
-    }
-
-    public IEnumerator Revive(float timeToRevive) {
+        FindObjectOfType<GameManager>().score += points;
         gameObject.SetActive(false);
-        yield return new WaitForSeconds(timeToRevive);
-        gameObject.SetActive(true);
-        StopCoroutine("Revive");
     }
 }

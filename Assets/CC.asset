@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 114871454215003220}
-  - {fileID: 114442874959682762}
+  - {fileID: 114669901615559062}
   - {fileID: 114943319504700106}
   - {fileID: 114339304345163086}
   - {fileID: 114212889461304646}
@@ -107,7 +107,7 @@ MonoBehaviour:
   vignette:
     overrideState: 1
     value: 0.5
---- !u!114 &114442874959682762
+--- !u!114 &114669901615559062
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +125,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 10
   threshold:
     overrideState: 1
-    value: 0
+    value: 1
   softKnee:
     overrideState: 1
     value: 1
@@ -137,10 +137,10 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 1
-    value: 6
+    value: 7
   anamorphicRatio:
     overrideState: 1
-    value: 1
+    value: 0
   color:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -149,11 +149,11 @@ MonoBehaviour:
     value: 0
   dirtTexture:
     overrideState: 1
-    value: {fileID: 2800000, guid: f7def47109ac88b468c9fb01ec09773c, type: 3}
+    value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 4
+    value: 0
 --- !u!114 &114749414423880408
 MonoBehaviour:
   m_ObjectHideFlags: 3
