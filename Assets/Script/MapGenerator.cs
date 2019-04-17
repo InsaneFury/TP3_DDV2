@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -22,31 +23,34 @@ public class MapGenerator : MonoBehaviour
 
     void Start()
     {
-        totalPlanes = xSize * zSize;
-        typesOfTerrain = new List<GameObject>();
-        map = new List<GameObject>();
+        if(SceneManager.GetActiveScene().name == "Gameplay") {
+            totalPlanes = xSize * zSize;
+            typesOfTerrain = new List<GameObject>();
+            map = new List<GameObject>();
 
-        //Loading all the types of terrain in the platforms folder to a Object array
-        ob = Resources.LoadAll("Prefab/platforms", typeof(Object));
-        //Adding all the terrains to a list
-        foreach(GameObject go in ob) {
-            go.transform.position = new Vector3(0, 0, 0);
-            typesOfTerrain.Add((GameObject)go); 
-        }
-        //Adding all the terrains randomly to a map list all with pos 0,0,0. And setActive(false)
-        for(int t = 0; t < totalPlanes; t++) {
-            if(t == 0) {
-                map.Add(Instantiate(typesOfTerrain[0], typesOfTerrain[0].transform.position, Quaternion.identity));
+            //Loading all the types of terrain in the platforms folder to a Object array
+            ob = Resources.LoadAll("Prefab/platforms", typeof(Object));
+            //Adding all the terrains to a list
+            foreach (GameObject go in ob) {
+                go.transform.position = new Vector3(0, 0, 0);
+                typesOfTerrain.Add((GameObject)go);
             }
-            else {
-                int randPrefab = (int)(Random.Range(1f, typesOfTerrain.Count));
-                map.Add(Instantiate(typesOfTerrain[randPrefab], typesOfTerrain[randPrefab].transform.position, Quaternion.identity));
-                map[t].SetActive(false);
-            }  
-        }
+            //Adding all the terrains randomly to a map list all with pos 0,0,0. And setActive(false)
+            for (int t = 0; t < totalPlanes; t++) {
+                if (t == 0) {
+                    map.Add(Instantiate(typesOfTerrain[0], typesOfTerrain[0].transform.position, Quaternion.identity));
+                }
+                else {
+                    int randPrefab = (int)(Random.Range(1f, typesOfTerrain.Count));
+                    map.Add(Instantiate(typesOfTerrain[randPrefab], typesOfTerrain[randPrefab].transform.position, Quaternion.identity));
+                    map[t].SetActive(false);
+                }
+            }
 
-        //Creating the map
-        CreateMap();
+            //Creating the map
+            CreateMap();
+        }
+       
     }
 
     void CreateMap() {
