@@ -16,9 +16,16 @@ public class trap_needle : MonoBehaviour
         
     }
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player") && waitToEndAnim) {
-            Player.GetComponent<Player>().takeDamage(trap_damage);
-            waitToEndAnim = false;
+        if (other.CompareTag("Player")) {
+            Invoke("DamagePlayer",1f);
         }
+    }
+    private void OnTriggerStay(Collider other) {
+        if (other.CompareTag("Player")) {
+            Invoke("DamagePlayer", 5f);
+        }
+    }
+    public void DamagePlayer() {
+        Player.GetComponent<Player>().takeDamage(trap_damage);
     }
 }

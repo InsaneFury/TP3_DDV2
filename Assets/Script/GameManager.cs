@@ -26,19 +26,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Score")) {
-            ScoreTextFound = GameObject.FindGameObjectWithTag("Score");
-            scoreText = ScoreTextFound.GetComponent<TextMeshProUGUI>();
-        }
-        else {
-            ScoreTextFound = null;
-            scoreText = null;
-        }
+        InitGameObjects();
         gameOver = false;
         score = 0;
     }
 
     private void Update() {
+        if (gameOver) {
+            Invoke("GameOverScene", 2f);
+            gameOver = false;
+        }
         if (scoreText) {
             scoreText.text = score.ToString();
         }
@@ -46,6 +43,17 @@ public class GameManager : MonoBehaviour
 
     //Scenes Functions
     public void NextScene() {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+    public void GameOverScene() {
+        
+        SceneManager.LoadScene("GameOver");
+    }
+
+    void InitGameObjects() {
+        if (GameObject.FindGameObjectWithTag("Score")) {
+            ScoreTextFound = GameObject.FindGameObjectWithTag("Score");
+            scoreText = ScoreTextFound.GetComponent<TextMeshProUGUI>();
+        }
     }
 }
