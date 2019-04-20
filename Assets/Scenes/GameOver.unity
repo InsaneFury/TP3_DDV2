@@ -324,7 +324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 498560184}
+      - m_Target: {fileID: 1370730810}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -579,7 +579,6 @@ GameObject:
   m_Component:
   - component: {fileID: 757533971}
   - component: {fileID: 757533970}
-  - component: {fileID: 757533969}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -587,24 +586,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &757533969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757533968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5191c871cd359c14ebaa48a80d96e18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typesOfTerrain: []
-  map: []
-  xSize: 5
-  zSize: 5
-  tileX: 20
-  tileY: 20
 --- !u!114 &757533970
 MonoBehaviour:
   m_ObjectHideFlags: 0

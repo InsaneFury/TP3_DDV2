@@ -1120,88 +1120,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 125201750}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &137905411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 137905413}
-  - component: {fileID: 137905412}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: AudioManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &137905412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137905411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de3bfea7b5026843b1b01e8005bff87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 24300002, guid: dc3d2548b25589b4084406dceaec03a8, type: 2}
-  sounds:
-  - name: shoot
-    clip: {fileID: 8300000, guid: 6c3e0368f13309742970516bbfdbfed3, type: 3}
-    volume: 0.45
-    volumeVariance: 0.107
-    pitch: 1
-    pitchVariance: 0.313
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: reload
-    clip: {fileID: 8300000, guid: 2b9ec41592a88a845883facfc2260484, type: 3}
-    volume: 0.41
-    volumeVariance: 0.055
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: noAmmo
-    clip: {fileID: 8300000, guid: a3fa4767426602a4b8ae2e409571ce27, type: 3}
-    volume: 0.074
-    volumeVariance: 0.055
-    pitch: 0.8
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: bullet_impact
-    clip: {fileID: 8300000, guid: 55db6c13987c1cd4e95504a18b8cf013, type: 3}
-    volume: 1
-    volumeVariance: 0.198
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  nameOfMainSong: 
---- !u!4 &137905413
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137905411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 310.93512, y: 164.10626, z: -0.47769517}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &198392744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2752,41 +2670,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 453356366}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &465121722
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 465121723}
-  m_Layer: 5
-  m_Name: '------------Managers--------------'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &465121723
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465121722}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &480107144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3096,7 +2979,6 @@ GameObject:
   - component: {fileID: 576202925}
   - component: {fileID: 576202924}
   - component: {fileID: 576202923}
-  - component: {fileID: 576202927}
   m_Layer: 5
   m_Name: ExitBTN
   m_TagString: Untagged
@@ -3179,7 +3061,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 576202927}
+      - m_Target: {fileID: 4407813}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -3229,18 +3111,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576202921}
   m_CullTransparentMesh: 0
---- !u!114 &576202927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576202921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd713d41ed06dc64daa414be452a2c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &579803475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10570,7 +10440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045396330}
   m_Layer: 0
-  m_Name: GameObjects
+  m_Name: Prefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
