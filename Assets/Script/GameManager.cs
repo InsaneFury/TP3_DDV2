@@ -6,54 +6,69 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    private static GameManager instance;
 
-    private void Awake() {
-        if(instance != null) {
-            Destroy(gameObject);
-        }
-        else {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+    public static GameManager Instance 
+    {
+        get 
+        {
+            return instance;
         }
     }
 
     [Header("UI")]
     public int score = 00;
-    public TextMeshProUGUI scoreText;
     public bool gameOver;
-    GameObject ScoreTextFound;
+
+    private void Awake() 
+        {
+        //Singleton
+        if(instance != null) 
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        //Cursor State
+        if (SceneManager.GetActiveScene().name == "GameOver") {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Debug.Log("Cursor Unlocked");
+        }
+        if (SceneManager.GetActiveScene().name == "Gameplay") {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Debug.Log("Cursor locked");
+        }
+    }
+
+    
 
     void Start()
     {
-        InitGameObjects();
         gameOver = false;
-        score = 0;
+        score = 00;
     }
 
-    private void Update() {
-        if (gameOver) {
+    void Update() {
+        if (gameOver) 
+        {
             Invoke("GameOverScene", 2f);
             gameOver = false;
-        }
-        if (scoreText) {
-            scoreText.text = score.ToString();
         }
     }
 
     //Scenes Functions
-    public void NextScene() {
+    public void NextScene() 
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
-    public void GameOverScene() {
-        
+    public void GameOverScene() 
+    {
         SceneManager.LoadScene("GameOver");
-    }
-
-    void InitGameObjects() {
-        if (GameObject.FindGameObjectWithTag("Score")) {
-            ScoreTextFound = GameObject.FindGameObjectWithTag("Score");
-            scoreText = ScoreTextFound.GetComponent<TextMeshProUGUI>();
-        }
     }
 }
