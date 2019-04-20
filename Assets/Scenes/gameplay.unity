@@ -1561,6 +1561,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1001 &891630789
@@ -3655,6 +3659,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5678805810473271795, guid: 49f3754cb0554cb49a5629bab01046f0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678805810473271795, guid: 49f3754cb0554cb49a5629bab01046f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5678805810472852959, guid: 49f3754cb0554cb49a5629bab01046f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3709,16 +3723,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678805810473271795, guid: 49f3754cb0554cb49a5629bab01046f0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678805810473271795, guid: 49f3754cb0554cb49a5629bab01046f0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5678805810473271793, guid: 49f3754cb0554cb49a5629bab01046f0,
         type: 3}
@@ -4209,6 +4213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life_text: {fileID: 1353364196}
   life: 100
+  impulseOfTrap: 10000
 --- !u!1001 &1956010309
 PrefabInstance:
   m_ObjectHideFlags: 0

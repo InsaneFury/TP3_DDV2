@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI life_text;
     public float life = 100f;
     bool isPlaying = true;
+    public float impulseOfTrap = 10f;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
         if(life <= 0f && isPlaying) 
         {
             isPlaying = false;
-            //GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().isKinematic = true;
             GameManager.Instance.gameOver = true;
         }
     }
@@ -39,12 +40,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.collider.CompareTag("trap")) ;
-        impulseBackward(500f);
+    public void impulseBackward(float impulse, Vector3 dir) {
+        GetComponent<Rigidbody>().AddForce(dir * impulse * Time.deltaTime, ForceMode.VelocityChange);
     }
 
-    public void impulseBackward(float impulse) {
-        GetComponent<Rigidbody>().AddForce(Vector3.back * impulse);
+    private void OnCollisionEnter(Collision c) 
+    {
+        if (c.collider.CompareTag("needle")) 
+        {
+            //Get Direction Vector trap to player
+            Vector3 Dir = transform.position - c.GetContact(0).point;
+            // We then get the opposite (-Vector3) and normalize it
+            Dir = -Dir.normalized;
+            impulseBackward(impulseOfTrap,Dir);
+        }
     }
+
+    
 }

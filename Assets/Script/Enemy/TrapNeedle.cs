@@ -7,7 +7,6 @@ public class TrapNeedle : MonoBehaviour
     [Header("Trap Settings")]
     public float trapDamage = 50f;
     public GameObject player;
-    public float forceToPushPlayer = 1000f;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -17,7 +16,6 @@ public class TrapNeedle : MonoBehaviour
 
         if (c.collider.CompareTag("Player")) 
         {
-            player.GetComponent<Player>().impulseBackward(forceToPushPlayer);
             DamagePlayer();
         }
     }
