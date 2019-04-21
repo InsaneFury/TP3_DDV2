@@ -13,13 +13,17 @@ public class Trap : MonoBehaviour
         anim.SetBool("trap_active", false);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
             anim.SetBool("trap_active", true);
         }
     }
-    private void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player")) {
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
             anim.SetBool("trap_active", false);
         }
     }

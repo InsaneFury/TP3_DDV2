@@ -9,6 +9,7 @@ TagManager:
   - trap
   - needle
   - Score
+  - battery
   layers:
   - Default
   - TransparentFX
